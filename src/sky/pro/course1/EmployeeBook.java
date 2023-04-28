@@ -9,13 +9,33 @@ public class EmployeeBook
     {
         Employee[] dataBase = fillArray(new Employee[10]);
 
-
+        //Базовая сложность
         EmployeeManagement.printAllEmployee(dataBase);
         EmployeeManagement.printAllEmployeeName(dataBase);
         EmployeeManagement.printSalarySum(dataBase);
         EmployeeManagement.avgSalary(dataBase);
         EmployeeManagement.printEmployeeWithMaxSalary(dataBase);
         EmployeeManagement.printEmployeeWithMinSalary(dataBase);
+
+        //Повышенная сложность
+        for (var emp: dataBase)
+        {
+            emp.setSalary(EmployeeManagement.changeSalary(emp.getSalary(), 10));
+        }
+        EmployeeManagement.printAllEmployee(dataBase);
+        System.out.println("\n");
+        EmployeeManagement.getMinSalaryInDepartment(0, dataBase);
+        EmployeeManagement.getMaxSalaryInDepartment(1, dataBase);
+        EmployeeManagement.getSumSalaryInDepartment(2, dataBase);
+        EmployeeManagement.getAVGSalaryInDepartment(3, dataBase);
+        EmployeeManagement.changeSalaryInDepartment(4, dataBase, 10);
+        EmployeeManagement.printAllEmployeeInDepartment(5, dataBase);
+        System.out.println("\n");
+        EmployeeManagement.getAllEmployeeLessSalary(80_000, dataBase);
+        System.out.println("\n");
+        EmployeeManagement.getAllEmployeeMoreSalary(90_000, dataBase);
+
+
 
     }
 
